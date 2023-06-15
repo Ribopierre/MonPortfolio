@@ -385,6 +385,17 @@ input, select, textarea {
 		text-transform: uppercase;
 	}
 
+	label2{
+		color: #ffffff;
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 300;
+		letter-spacing: 0.2rem;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+	}
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -496,6 +507,24 @@ input, select, textarea {
 			position: relative;
 		}
 
+		input[type="checkbox"] + label2,
+		input[type="radio"] + label2 {
+			text-decoration: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			color: #ffffff;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 0.8rem;
+			font-weight: 300;
+			margin: 0 0 0.5rem 0;
+			padding-left: 2.65rem;
+			padding-right: 0.75rem;
+			position: relative;
+		}
+
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
@@ -510,8 +539,41 @@ input, select, textarea {
 				font-weight: 900;
 			}
 
+			input[type="checkbox"] + label2:before,
+			input[type="radio"] + label2:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				line-height: 1;
+				text-transform: none !important;
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+			}
+
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
+				-moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+				-webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+				-ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+				transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+				border-radius: 4px;
+				border: solid 1px #ffffff;
+				content: '';
+				display: inline-block;
+				height: 1.65rem;
+				left: 0;
+				line-height: 1.65rem;
+				position: absolute;
+				text-align: center;
+				top: -0.15rem;
+				width: 1.65rem;
+			}
+
+			input[type="checkbox"] + label2:before,
+			input[type="radio"] + label2:before {
 				-moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 				-webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 				-ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -544,11 +606,34 @@ input, select, textarea {
 			box-shadow: 0 0 0 1px #ffffff;
 		}
 
+		input[type="checkbox"]:checked + label2:before,
+		input[type="radio"]:checked + label2:before {
+			background: #ffffff !important;
+			border-color: #ffffff !important;
+			color: #1b1f22;
+			content: '\f00c';
+		}
+
+		input[type="checkbox"]:focus + label2:before,
+		input[type="radio"]:focus + label2:before {
+			background: rgba(255, 255, 255, 0.075);
+			border-color: #ffffff;
+			box-shadow: 0 0 0 1px #ffffff;
+		}
+
 	input[type="checkbox"] + label:before {
 		border-radius: 4px;
 	}
 
 	input[type="radio"] + label:before {
+		border-radius: 100%;
+	}
+
+	input[type="checkbox"] + label2:before {
+		border-radius: 4px;
+	}
+
+	input[type="radio"] + label2:before {
 		border-radius: 100%;
 	}
 
@@ -634,6 +719,45 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+
+/* Icon */
+
+.icon2 {
+	text-decoration: none;
+	border-bottom: none;
+	position: relative;
+}
+
+	.icon2:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 1;
+		padding-top: 2.5em;
+		text-transform: none !important;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+	}
+
+	/*.icon2 > .label2 {
+		display: none;
+	}
+	*/
+	
+	.icon2:before {
+		line-height: inherit;
+	}
+
+	.icon2.solid:before {
+		font-weight: 900;
+	}
+
+	.icon2.brands:before {
+		font-family: 'Font Awesome 5 Brands';
+	}
 
 /* Image */
 
@@ -903,21 +1027,21 @@ input, select, textarea {
 
 		ul.icons li {
 			display: inline-block;
-			padding: 0 75em 0 0;
+			padding: 0 0.75em 0 0;
 		}
 
 			ul.icons li:last-child {
-				padding-right: 0px;
+				padding-right: 0;
 			}
 
 			ul.icons li a {
 				border-radius: 100%;
 				box-shadow: inset 0 0 0 1px #ffffff;
 				display: inline-block;
-				height: 20rem;
+				height: 2.25rem;
 				line-height: 2.25rem;
 				text-align: center;
-				width: 50rem;
+				width: 2.25rem;
 			}
 
 				ul.icons li a:hover {
@@ -928,46 +1052,40 @@ input, select, textarea {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 
-
 /* Icons */
 
-/* Icon */
-
-.icon2 {
-	text-decoration: none;
-	border-bottom: none;
-	position: relative;
+ul.icons2 {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
 }
 
-	.icon2:before {
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
+	ul.icons2 li {
 		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		line-height: 1;
-		text-transform: none !important;
-		font-family: 'Font Awesome 5 Free';
-		font-weight: 400;
+		padding: 0 0.75em 0 0;
 	}
 
-	.icon2 > .label {
-		display: none;
-	}
+		ul.icons2 li:last-child {
+			padding-right: 0;
+		}
 
-	.icon2:before {
-		line-height: inherit;
-	}
+		ul.icons2 li a {
+			border-radius: 100%;
+			box-shadow: inset 0 0 0 1px #ffffff;
+			display: inline-block;
+			height: 2.25rem;
+			line-height: 2.25rem;
+			text-align: center;
+			width: 2.25rem;
+		}
 
-	.icon2.solid:before {
-		font-weight: 900;
-	}
+			ul.icons2 li a:hover {
+				background-color: rgba(255, 255, 255, 0.075);
+			}
 
-	.icon2.brands:before {
-		font-family: 'Font Awesome 5 Brands';
-	}
-
+			ul.icons2 li a:active {
+				background-color: rgba(255, 255, 255, 0.175);
+			}
 
 /* Table */
 
@@ -1498,6 +1616,11 @@ input, select, textarea {
 				#header .logo .icon:before {
 					font-size: 1.75rem;
 				}
+
+				#header .logo .icon2:before {
+					font-size: 1.75rem;
+				}
+				
 
 			#header .content .inner {
 				padding: 2.5rem 1rem;
